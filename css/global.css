@@ -1,0 +1,41 @@
+body {
+  font-family: "Fira Sans", Arial, sans serif;
+  margin: 0px;
+  color: #141414;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.subtitulo {
+  font-size: 8rem;
+  line-height: 1;
+  text-transform: uppercase;
+  word-break: break-all;
+  max-width: 4ch;
+}
+
+@media (max-width: 800px) {
+  .subtitulo {
+    font-size: 3rem;
+    text-transform: capitalize;
+    /* posso colocar um seletor !important ao lado do max-width para que ele possa carregar essa informacao ao inves do 5ch ou posso ir la em formacao css e add na @media nas classes formacao e subtitulo juntos, pois o estilo esta carregando global primeiro para depois formacao que acaba sobrepondo */
+    max-width: initial;
+  }
+}

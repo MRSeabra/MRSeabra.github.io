@@ -1,0 +1,170 @@
+.formacao {
+  background: #141414;
+  color: #fff;
+}
+
+.formacao-container {
+  max-width: 1200px;
+  padding: 120px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  position: relative;
+}
+
+.formacao-container::after {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute;
+  /* metade da altura */
+  bottom: -50px;
+  left: 20px;
+}
+
+.formacao .subtitulo {
+  /* cor responsiva para leitores de tela escala da taxa de contraste = 4,66:1 50% de luminosidade */
+  color: #808080;
+  /* texto nao responsivo para leitor de tela (cor original)
+  color: #000; considerado como mero detalhe e sem necessidade de ser lido */
+  max-width: 5ch;
+}
+
+.formacao-texto {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 60px;
+  color: #a3a3a3;
+}
+
+.formacao-texto strong {
+  color: #fff;
+}
+
+.faculdade-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.faculdade {
+  /* flex 1 faz com que todos os conteudos dessa classe tenham um mesmo tamanho */
+  flex: 1;
+  background: #000;
+  padding: 20px;
+
+  border-radius: 4px;
+  /* display flex e flex direction servem para mexer nos span sem modificar a estrutura; */
+  display: flex;
+  flex-direction: column;
+}
+
+.faculdade-tipo {
+  font: 0.875rem;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 10px;
+}
+
+.faculdade-curso {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.faculdade-curso::before {
+  /* flex 1 vai fazer o conteudo crescer o max para manter o conteudo igual aos outros, vai empurrar o 'infinet' la para baixo para que possa ficar mais alinhado com os demais */
+  flex: 1;
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f829, #67dd0a);
+  position: absolute;
+  /* -20 do padding -4 do item */
+  left: -24px;
+}
+
+.faculdade-instituicao {
+  font-size: 1.125rem;
+  color: #a3a3a3;
+}
+
+.cursos {
+  margin-bottom: 60px;
+}
+
+.formacao-extra h3 {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  /* position relative para posicionar o icone ao lado como um pseudo elemento*/
+  position: relative;
+}
+
+.formacao-extra h3::before {
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  /* background: url("../img/cursos.svg") no-repeat center center; é melhor falar direto com as classes, manter esse estilo padrao mudando apenas as imagens     */
+  /* para colocar ao lado position absolut pois a class formacao extra h3 ja esta como position relative*/
+  position: absolute;
+  /* 24+12px = 36px como quero por ao lado esquerdo left com - */
+  left: -36px;
+  /* para colocar um pouco mais para cima */
+  top: -4px;
+}
+
+.cursos h3::before {
+  background: url("../img/cursos.svg") no-repeat center center;
+}
+
+.idiomas h3::before {
+  background: url("../img/idiomas.svg") no-repeat center center;
+}
+
+.formacao-extra li {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.formacao-extra span {
+  color: #8f8f8f;
+}
+
+.cursos li {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+  .formacao-container {
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .formacao .subtitulo {
+    color: #fff;
+    max-width: initial;
+  }
+
+  .formacao-texto {
+    font-size: 1.25rem;
+  }
+
+  .formacao-extra h3::before {
+    position: initial;
+    margin-bottom: 10px;
+  }
+}
